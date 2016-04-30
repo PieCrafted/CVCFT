@@ -5,9 +5,10 @@
 
 I have been running CVCFT.com on a 5$ a month LEMP server from [DigitalOcean](https://m.do.co/c/5a3259e06cb7). I would highly recommend them to anyone looking for a VPS.
 
-You will need Python instaled on your computer.
+You will need Python instaled on your computer. Please download it here: https://www.python.org/downloads/release/python-2711/
 
 Steps for a Macintosh:
+
 1. Go to personal-computer > template > data > master, and drag your JourneyMap raw .png files in here.
 2. Open Terminal.app and type "cd" then hit the space-bar, then drag the data folder onto the window. Hit enter.
 3. Now type "python" then hit the space-bar, then drag merge.py onto the window. Hit enter.
