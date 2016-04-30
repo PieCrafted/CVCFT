@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/ol.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/civmap.css" type="text/css">
+    <link rel="import" href="components.html">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>Soon: reddit integration</title>
+    <link rel="icon" href="img/favicon.png">
+  </head>
+  <body>
+    <core-drawer-panel>
+      
+      <core-header-panel drawer>
+        <core-toolbar>
+          <img src="img/logo.png"/>
+          <core-icon-button icon="home"></core-icon-button>
+          <core-tooltip label="Get URL for current view"><core-icon-button icon="link"></core-icon-button></core-tooltip>
+          <core-icon-button icon="file-download"></core-icon-button>
+        </core-toolbar>
+
+        <layer-toggle>
+          <layer-item name="rails" checked>Rail network</layer-item>
+          <layer-item name="cities" checked>Cities</layer-item>
+          <layer-item name="abandoned">Inactive cities</layer-item>
+          <layer-item name="points" checked>Points of interest</layer-item>
+          <layer-item name="civballs"><core-tooltip label="by Soraendo">Civballs</core-tooltip></layer-item>
+          <layer-item name="tiles" checked exclusive>Map tiles</layer-item>
+          <layer-item name="night" exclusive>Night map tiles</layer-item>
+          <layer-item name="svg" exclusive><core-tooltip label="(WIP) by kovio">Landmass outline</core-tooltip></layer-item>
+        </layer-toggle>
+
+        <div layout>
+          <core-icon-button icon="add" add-city>Add city, town, or any other location</core-icon-button>
+          <core-icon-button icon="add" add-rail>Add rail</core-icon-button>
+        </div>
+
+        <paper-shadow z="3"></paper-shadow>
+      </core-header-panel>
+
+      <core-header-panel main>
+        <core-toolbar hidden>
+          <core-icon-button icon="menu"></core-icon-button>
+          <div flex>
+            <a href="http://reddit.com/r/civtransportmap">Civcraft Map</a>
+          </div>
+        </core-toolbar>
+
+        <civ-map id="map"></civ-map>
+        <div id="position"></div>
+      </core-header-panel>
+
+    </core-drawer-panel>
+    <script>
+    document.querySelector('core-drawer-panel').addEventListener('core-responsive-change', function(e) {
+      document.querySelector('core-header-panel[main] core-toolbar').hidden = !e.detail.narrow;
+    });
+    document.querySelector('core-header-panel[main] core-icon-button[icon=menu]').addEventListener('click', function() {
+      document.querySelector('core-drawer-panel').togglePanel();
+    });
+
+    document.querySelector('core-toolbar core-icon-button[icon=link]').addEventListener('click', function() {
+      window.location.hash = document.querySelector('civ-map').getZoomHash();
+    });
+    document.querySelector('core-toolbar core-icon-button[icon=home]').addEventListener('click', function() {
+      document.querySelector('civ-map').goHome();
+    });
+    document.querySelector('core-toolbar core-icon-button[icon=file-download]').addEventListener('click', function() {
+      document.querySelector('civ-map').download(this);
+    });
+
+    document.querySelector('core-icon-button[add-city]').addEventListener('click', function() {
+      window.addCity();
+    });
+    document.querySelector('core-icon-button[add-rail]').addEventListener('click', function() {
+      window.addRail();
+    });
+    </script>
+    <script src="js/hello.min.js"></script>
+    <script src="http://localhost:9966/js/main.js"></script>
+  </body>
+</html>
