@@ -1,6 +1,6 @@
 {
   "name": "CVCFT.com",
   "tagline": "The source for the /r/Civcraft webmap that was hosted at CVCFT.com",
-  "body": "### Welcome to CVCFT.com\r\nThis website used to host a webmap for the [/r/Civcraft](https://reddit.com/r/Civcraft) minecraft server. It is now closed down due to my lack of wanting to manage it. You can download the source and run your own copy of the map [by clicking here](https://github.com/PieCrafted/CVCFT). Everything is in the README.md file.\r\n\r\n### Authors and Contributors\r\nThis project is based off of the civmap-client by @gipsy-king. You can view the original repo [here](https://github.com/gipsy-king/civmap-client).\r\n\r\n### Contact\r\nYou can shoot me an email at [webmaster@cvcft.com](mailto:webmaster@cvcft.com].\r\n",
+  "body": "### Welcome to CVCFT.com\r\nThis website used to host a webmap for the [/r/Civcraft](https://reddit.com/r/Civcraft) minecraft server. It is now closed down due to my lack of wanting to manage it. You can download the source and run your own copy of the map [by clicking here](https://github.com/PieCrafted/CVCFT). Everything is in the README.md file.\r\n\r\n### Authors and Contributors\r\nThis project is based off of the civmap-client by @gipsy-king. You can view the original repo [here](https://github.com/gipsy-king/civmap-client).\r\n\r\n### Contact\r\nYou can shoot me an email at [webmaster@cvcft.com](mailto:webmaster@cvcft.com).\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
